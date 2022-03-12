@@ -54,7 +54,6 @@ const addEventToPaintingBlocks = () => {
     block.addEventListener('mouseup', handleMouseUp)
 
     block.addEventListener('touchstart', handleMouseDown)
-    block.addEventListener('touchmove', handleMouseMove)
     block.addEventListener('touchend', handleMouseUp)
   })
 }
@@ -64,5 +63,8 @@ const paintGridWithItems = () => {
   addLastRow()
   addEventToPaintBlocks()
   addEventToPaintingBlocks()
+  setTimeout(() => {
+    grid.addEventListener('touchmove', handleMouseMove)
+  })
 }
 paintGridWithItems()

@@ -18,8 +18,8 @@ body {
 }
 
 div.grid {
-  min-width: 30em;
-  min-height: 30em;
+  width: 30em;
+  height: 30em;
 
   background:  #f3f3f3;
   border-radius: 4px;
@@ -40,4 +40,11 @@ div.grid {
 }
 .gridItem.last-row {
   cursor: pointer;
+}
+
+@media (max-width : 500px) {
+  div.grid {
+    width: 15em;
+    height: 15em;
+  }
 }
