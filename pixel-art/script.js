@@ -63,8 +63,5 @@ const paintGridWithItems = () => {
   addLastRow()
   addEventToPaintBlocks()
   addEventToPaintingBlocks()
-  setTimeout(() => {
-    grid.addEventListener('touchmove', handleMouseMove)
-  })
 }
 paintGridWithItems()
