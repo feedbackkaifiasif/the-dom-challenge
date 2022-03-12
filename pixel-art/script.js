@@ -52,9 +52,6 @@ const addEventToPaintingBlocks = () => {
     block.addEventListener('mousedown', handleMouseDown)
     block.addEventListener('mousemove', handleMouseMove)
     block.addEventListener('mouseup', handleMouseUp)
-
-    block.addEventListener('touchstart', handleMouseDown)
-    block.addEventListener('touchend', handleMouseUp)
   })
 }
 
@@ -64,4 +61,7 @@ const paintGridWithItems = () => {
   addEventToPaintBlocks()
   addEventToPaintingBlocks()
 }
-paintGridWithItems()
+paintGridWithItems()  
+document.addEventListener('mouseover', (e) => {
+  if(e.target.classList.length == 0) isMouseClicked = false
+})
