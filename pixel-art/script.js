@@ -36,16 +36,13 @@ const addEventToPaintBlocks = () => {
 }
 
 const handleMouseDown = (e) => {
-  console.log('mouse down');
   if(CURRENTCOLOR) e.target.style.background = CURRENTCOLOR
   isMouseClicked = true
 }
 const handleMouseMove = e => {
-  console.log('mouse move');
   if(isMouseClicked && CURRENTCOLOR) e.target.style.background = CURRENTCOLOR
 }
 const handleMouseUp = e => {
-  console.log('mouse up');
   isMouseClicked = false
 }
 
@@ -55,7 +52,10 @@ const addEventToPaintingBlocks = () => {
     block.addEventListener('mousedown', handleMouseDown)
     block.addEventListener('mousemove', handleMouseMove)
     block.addEventListener('mouseup', handleMouseUp)
-    block.addEventListener('dbclick', handleMouseUp)
+
+    block.addEventListener('touchstart', handleMouseDown)
+    block.addEventListener('touchmove', handleMouseMove)
+    block.addEventListener('touchend', handleMouseUp)
   })
 }
 

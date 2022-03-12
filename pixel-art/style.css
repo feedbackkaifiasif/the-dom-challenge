@@ -35,6 +35,8 @@ div.grid {
   border: 1px solid #C4DAE3;
   background: #fbfffd;
   border-radius: 4px;
+
+  user-select: none;
 }
 .gridItem.last-row {
   cursor: pointer;
