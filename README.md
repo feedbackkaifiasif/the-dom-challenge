@@ -4,6 +4,11 @@ Devkode is coming up with a weekly hackathon, **#TheDOMChallenge** <br />
 It's a 60-90 minutes online weekly challenge related to frontend development consisting of
 industrial level machine round questions.
 
+> This forked also contains my solution to these challenges along with their demo
+- I tried to complete the challenge in give time only.
+- These challenges looks small but they are really challenging.
+- I am really very thankful to this challenge creater.
+
 ---
 
 ### Challenge 1:
@@ -16,6 +21,8 @@ Implement Star Rating Widget using HTML, CSS and JavaScript [View](./star-rating
 
 **Solution 2:** https://jsfiddle.net/devkodeio/dry8mczx/
 
+**My Solution** [Click Here](https://masterpranay1.github.io/the-dom-challenge/star-rating/)
+
 ---
 
 ### Challenge 2:
@@ -23,6 +30,9 @@ Implement Star Rating Widget using HTML, CSS and JavaScript [View](./star-rating
 Implement Pixel Art grid using HTML, CSS and JavaScript [View](./pixel-art/README.md)
 
 **Duration:** 60 Minutes <br/>
+
+**My Solution** [Click Here](https://masterpranay1.github.io/the-dom-challenge/pixel-art/)
+
 
 ---
 
@@ -32,6 +42,9 @@ Implement chess board using HTML, CSS and Vanilla Javascript, where if you click
 
 **Duration:** 90 Minutes <br/>
 
+**My Solution** [Click Here](https://masterpranay1.github.io/the-dom-challenge/chess-board/)
+
+
 ---
 
 ### Challenge 4:
@@ -39,6 +52,8 @@ Implement chess board using HTML, CSS and Vanilla Javascript, where if you click
 Implement color spotter game using HTML, CSS and Vanilla Javascript, where you have to identify the cell that is different from the rest. [View](./color-spotter/README.md)
 
 **Duration:** 90 Minutes <br/>
+**My Solution** [Click Here](https://masterpranay1.github.io/the-dom-challenge/color-spotter/)
+
 
 ---
 
@@ -47,6 +62,8 @@ Implement color spotter game using HTML, CSS and Vanilla Javascript, where you h
 Implement Progress bar using HTML, CSS and Vanilla Javascript. [View](./progress-bar/README.md)
 
 **Duration:** 90 Minutes <br/>
+
+**My Solution** [Click Here](https://masterpranay1.github.io/the-dom-challenge/progress-bar/)
 
 ---
 

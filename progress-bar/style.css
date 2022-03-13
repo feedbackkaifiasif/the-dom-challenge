@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #000000;
+}
+
+div.container {
+  width: 30em;
+  height: fit-content;
+}
+
+div.progress__wrapper {
+  width: 100%;
+  height: 3em;
+
+  background-color: #f8fafc;
+  border-radius: 4px;
+}
+div.progress__bar {
+  width: 0;
+  height: 3em;
+
+  background : linear-gradient(90deg, rgb(123, 91, 199) 0%, rgb(234, 56, 141) 100%);
+  border-radius: 4px;
+}
+div.progress__bar.animate {
+  animation-name: progress;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+@keyframes progress {
+  0% { width: 0;}
+  100% { width: 100%; }
+}
+
+h2 {
+  background-color: #f8fafc;
+  border-radius: 3px;
+
+  width: fit-content;
+  margin-top: 2em;
+  padding: 0.4em 0.8em;
+
+  color: #e6398f;
+  font-weight: 500;
+  font-family: monospace;
+
+  transition: 0.3s;
+
+  user-select: none;
+}
+h2:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
