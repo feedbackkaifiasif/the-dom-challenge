@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  user-select: none;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 2em;
+
+  background-color: #fafafa;
+
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Nunito', sans-serif;
+}
+.container {
+  width: 30em;
+  height: 35em;
+
+  padding: 1em;
+
+  overflow-y: scroll;
+}
+div.calender__wrapper {
+  width: 100%;
+  height: auto;
+  /* max-height: 35em; */
+
+  background-color: #f0f5ed;
+  border-radius: 8px;
+
+  padding: 1em;
+  padding-bottom: 6em;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+div.container::-webkit-scrollbar {
+  display: none;
+  /* appearance: none; */
+}
+
+div.time__wrapper {
+  width: 100%;
+  height: 5em;
+
+  display: flex;
+
+  border-bottom: 2px solid #05c46b5d;
+
+  /* background: #fafafa; */
+}
+
+div.time__wrapper h3 {
+  width: 5em;
+  color: #2b2e4a;
+  font-weight: 500;
+
+  transform: translateY(50%);
+
+  background-color: #f0f5ed;
+
+  margin-top: auto;
+
+  z-index: 0;
+}
+
+div.calender__wrapper div.task {
+  --top : 2;
+  --height : 2;
+  --width : 7.2em;
+
+  position: absolute;
+  top: calc(1em + 5em * var(--top)); 
+  left: 6.7em;
+
+  padding: 0 1em;
+
+  /* background-color: rgb(142, 224, 207);
+  color: #fafafa; */
+
+  width: calc(100% - var(--width));
+  min-width: 7em;
+  height: calc(5em  * var(--height)); 
+
+  border-radius: 10px;
+  border: 2px solid white;
+
+  z-index: 2;
+}
+
+div.calender__wrapper div.task:hover {
+  /* z-index: 100; */
+  cursor: pointer;
+}
