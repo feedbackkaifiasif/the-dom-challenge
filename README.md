@@ -72,6 +72,7 @@ Implement Progress bar using HTML, CSS and Vanilla Javascript. [View](./progress
 Implement Memory Game using HTML, CSS and Vanilla Javascript. [View](./memory-game/README.md)
 
 **Duration:** 90 Minutes <br/>
+**My Solution** [Click Here](https://masterpranay1.github.io/the-dom-challenge/memory-game/)
 
 ---
 
@@ -80,6 +81,7 @@ Implement Memory Game using HTML, CSS and Vanilla Javascript. [View](./memory-ga
 Implement Day Calendar using HTML, CSS and Vanilla Javascript. [View](./calendar/README.md)
 
 **Duration:** 120 Minutes <br/>
+**My Solution** [Click Here](https://masterpranay1.github.io/the-dom-challenge/calendar/)
 
 <br />
 
