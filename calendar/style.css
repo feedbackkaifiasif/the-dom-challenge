@@ -79,18 +79,18 @@ div.time__wrapper h3 {
 div.calender__wrapper div.task {
   --top : 2;
   --height : 2;
-  --width : 7.2em;
+  --width : 1;
 
   position: absolute;
   top: calc(1em + 5em * var(--top)); 
-  left: 6.7em;
+  right: 1em;
 
   padding: 0 1em;
 
   /* background-color: rgb(142, 224, 207);
   color: #fafafa; */
 
-  width: calc(100% - var(--width));
+  width: calc((100% - 7em) / var(--width) - 0.5em);
   min-width: 7em;
   height: calc(5em  * var(--height)); 
 
@@ -98,9 +98,10 @@ div.calender__wrapper div.task {
   border: 2px solid white;
 
   z-index: 2;
+
+  word-wrap: break-word;
 }
 
 div.calender__wrapper div.task:hover {
-  /* z-index: 100; */
   cursor: pointer;
 }

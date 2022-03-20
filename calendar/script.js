@@ -112,8 +112,32 @@ const conflictingData = [
     title: "#TeamDevkode",
   },
 ]
+const isVisited = new Array(conflictingData.length).fill(0) 
 
+const extractTime = (time) => {
+  const [hourStart, minuteStart] = time.split(':')
+  return (+hourStart + (+minuteStart / 60))
+}
 
+const createAdjencyList = (data) => {
+  const list = [...Array(data.length)].map(e => Array(0))
+  for(let i = 0; i < data.length; i++) {
+    let s1 = extractTime(data[i].startTime)
+    let e1 = extractTime(data[i].endTime)
+    for(let j = i+1; j < data.length; j++) {
+      let s2 = extractTime(data[j].startTime)
+      let e2 = extractTime(data[j].endTime)
+      if(( s1 >= s2 && s1 <= e2 ) || ( s2 >= s1 && s2 <= e1)) {
+        list[i].push(j)
+        list[j].push(i)
+      }
+    }
+  }
+  return list
+}
+
+const graph = createAdjencyList(conflictingData)
+ 
 function Time(hour, zone) {
   const timeWrapper = document.createElement('div')
   timeWrapper.classList.add('time__wrapper')
@@ -140,12 +164,7 @@ const addTimeBoxesToCalender = () => {
   }
 }
 
-const extractTime = (time) => {
-  const [hourStart, minuteStart] = time.split(':')
-  return (+hourStart + (+minuteStart / 60))
-}
-
-function Task({startTime, endTime, color, title}, i) {
+function Task({startTime, endTime, color, title}, zIndex, width = 0) {
   const task = document.createElement('div')
   task.className = 'task'
 
@@ -168,8 +187,9 @@ function Task({startTime, endTime, color, title}, i) {
 
   task.style.setProperty('--top', top)
   task.style.setProperty('--height', bottom - top)
+  task.style.setProperty('--width', width+1)
   
-  task.style.zIndex = i + 1
+  task.style.zIndex = zIndex + 1
   return task
 }
 
@@ -180,16 +200,32 @@ const addNonConflictingTaskToCalender = () => {
   })
 }
 
-const sortFunction = (dataA, dataB) => {
-  return dataA.startTime - dataB.startTime
+const getConflictingTasks = (index) => {
+  isVisited[index] = 1
+  let arr = []
+  for(let j = 0; j < graph[index].length; j++) {
+    if(!isVisited[graph[index][j]])
+    arr = getConflictingTasks(graph[index][j])
+  }
+  return [...arr, index]
 }
 
 const addConflictingTaskToCalender = () => {
-  const sortedData = conflictingData.sort((dataA,dataB) => sortFunction(dataA, dataB))
-  sortedData.forEach((data, i) => {
-    const task = new Task(data, i)
-    calender.appendChild(task)
-  })
+  for(let i = 0; i < graph.length; i++) {
+    if(!isVisited[i]) {
+      const arr = getConflictingTasks(i)
+      const arrSorted = arr.sort((a,b) => {
+        const s1 = extractTime(conflictingData[a].startTime)
+        const s2 = extractTime(conflictingData[b].startTime)
+
+        return s1 - s2;
+      })
+      arrSorted.forEach((e, i) => {
+        const task = new Task(conflictingData[e], i, i)
+        calender.appendChild(task)
+      })
+    }
+  }
 }
 
 // addNonConflictingTaskToCalender()
